@@ -6,244 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assessoria Acadêmica | Suporte Completo para TCC, Artigos e Mais</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#583424',
-                        secondary: '#8C5E3D',
-                        accent: '#D9A577',
-                        light: '#F2E2D0',
-                        dark: '#261712'
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'float-reverse': 'float-reverse 5s ease-in-out infinite',
-                        'pulse-slow': 'pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        'float-reverse': {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(20px)' },
-                        }
-                    }
-                }
-            }
-        }
+    <script type="module">
+        import tailwindConfig from './js/tailwind-config.js';
+        tailwind.config = tailwindConfig;
     </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #F9F5F0;
-            overflow-x: hidden;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #583424 0%, #8C5E3D 100%);
-        }
-
-        .hero-gradient {
-            background: radial-gradient(circle at 70% 30%, rgba(88, 52, 36, 0.8) 0%, rgba(44, 26, 18, 0.9) 100%);
-        }
-
-        .card-hover {
-            transition: all 0.3s ease;
-        }
-
-        .card-hover:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-        }
-
-        .input-focus:focus {
-            outline: none;
-            box-shadow: 0 0 0 3px rgba(216, 165, 119, 0.5);
-        }
-
-        .floating-shape {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(216, 165, 119, 0.1);
-            filter: blur(60px);
-            z-index: -1;
-        }
-
-        .nav-link {
-            position: relative;
-        }
-
-        .nav-link:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -2px;
-            left: 0;
-            background-color: #D9A577;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover:after {
-            width: 100%;
-        }
-
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-
-        .btn-hover:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        .testimonial-card {
-            background: linear-gradient(145deg, #FFFFFF 0%, #F2E2D0 100%);
-            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(216, 165, 119, 0.2) 0%, rgba(88, 52, 36, 0.1) 100%);
-        }
-
-        .timeline-item:not(:last-child):after {
-            content: '';
-            position: absolute;
-            left: 24px;
-            top: 48px;
-            height: calc(100% - 48px);
-            width: 2px;
-            background: #D9A577;
-        }
-
-        .timeline-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #583424;
-            position: absolute;
-            left: 20px;
-            top: 20px;
-        }
-
-        .floating-badge {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .floating-badge:nth-child(2) {
-            animation-delay: 1s;
-        }
-
-        .floating-badge:nth-child(3) {
-            animation-delay: 2s;
-        }
-
-        .scroll-down {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: #F2E2D0;
-            font-size: 24px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-
-            0%,
-            20%,
-            50%,
-            80%,
-            100% {
-                transform: translateY(0) translateX(-50%);
-            }
-
-            40% {
-                transform: translateY(-20px) translateX(-50%);
-            }
-
-            60% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-        }
-
-        .counter-item {
-            position: relative;
-        }
-
-        .counter-item:after {
-            content: '+';
-            position: absolute;
-            right: -15px;
-            top: 0;
-            color: #D9A577;
-        }
-
-        .faq-item {
-            transition: all 0.3s ease;
-        }
-
-        .faq-item:hover {
-            background-color: rgba(216, 165, 119, 0.1);
-        }
-
-        .faq-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-
-        .faq-content.active {
-            max-height: 300px;
-        }
-
-        .faq-toggle {
-            transition: transform 0.3s ease;
-        }
-
-        .faq-toggle.active {
-            transform: rotate(180deg);
-        }
-
-        .floating-paper {
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 10px;
-            transform: rotate(5deg);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-    </style>
 </head>
 
 <body class="text-dark">
-    <!-- Floating background elements -->
-    <div class="floating-shape w-64 h-64 -left-32 -top-32"></div>
-    <div class="floating-shape w-96 h-96 -right-48 bottom-1/3"></div>
-    <div class="floating-shape w-80 h-80 left-1/4 top-1/2"></div>
-
-    <!-- Navigation -->
     <nav class="bg-white shadow-sm fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
                     <div class="flex-shrink-0 flex items-center">
-                        <!-- <div
-                            class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl">
-                            AA</div>
-                        <span class="ml-3 text-xl font-bold text-primary">Assessoria Acadêmica</span> -->
                         <div
                             class="w-12 h-12 rounded-full p-1 gradient-bg flex items-center justify-center text-white font-bold text-xl">
                             <img src="img/logo.png" class="w-full h-full rounded-full object-cover">
@@ -265,7 +41,7 @@
                         </svg>
                     </button>
                 </div>
-                <div class="hidden md:flex items-center">
+                <div class="hidden lg:flex items-center">
                     <a href="#contato"
                         class="ml-8 gradient-bg text-white px-6 py-2 rounded-full font-medium btn-hover">Fale
                         Conosco</a>
@@ -273,7 +49,6 @@
             </div>
         </div>
 
-        <!-- Mobile menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <a href="#servicos" class="block px-3 py-2 rounded-md text-base font-medium text-primary">Serviços</a>
@@ -290,36 +65,32 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero-gradient min-h-screen flex items-center relative overflow-hidden pt-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-12 md:mb-0">
-                    <h1 class="text-4xl md:text-6xl font-bold text-white leading-tight mb-6">
+            <div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-8 lg:pr-12 md:text-left text-center">
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
                         Sua <span class="text-accent">jornada acadêmica</span> mais fácil e eficiente
                     </h1>
-                    <p class="text-xl text-light mb-8">
+                    <p class="text-lg sm:text-xl text-light mb-8">
                         Assessoria especializada para TCC, artigos científicos, provas e conclusão de ensino médio.
                         Conte com nossa equipe de especialistas para alcançar seus objetivos acadêmicos.
                     </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <div class="flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
                         <a href="#contato"
-                            class="bg-accent text-primary px-8 py-3 rounded-full font-bold text-center btn-hover">
+                            class="bg-accent text-primary px-6 sm:px-8 py-3 rounded-full font-bold text-center btn-hover text-sm sm:text-base">
                             Solicitar Orçamento
                         </a>
                         <a href="#servicos"
-                            class="border-2 border-accent text-accent px-8 py-3 rounded-full font-bold text-center btn-hover">
+                            class="border-2 border-accent text-accent px-6 sm:px-8 py-3 rounded-full font-bold text-center btn-hover text-sm sm:text-base">
                             Conheça Nossos Serviços
                         </a>
                     </div>
                     <div class="mt-8 flex items-center space-x-4">
                         <div class="flex -space-x-2">
-                            <img class="w-10 h-10 rounded-full border-2 border-white"
-                                src="https://randomuser.me/api/portraits/women/12.jpg" alt="">
-                            <img class="w-10 h-10 rounded-full border-2 border-white"
-                                src="https://randomuser.me/api/portraits/men/32.jpg" alt="">
-                            <img class="w-10 h-10 rounded-full border-2 border-white"
-                                src="https://randomuser.me/api/portraits/women/45.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="img/perfil_1.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="img/perfil_2.jpg" alt="">
+                            <img class="w-10 h-10 rounded-full border-2 border-white" src="img/perfil_3.jpg" alt="">
                         </div>
                         <div class="text-light">
                             <p class="font-medium">+500 alunos atendidos</p>
@@ -344,46 +115,28 @@
                         <div
                             class="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 transform rotate-1">
                             <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                alt="Estudante feliz" class="w-full h-auto">
+                                class="w-full h-auto">
                             <div class="p-6">
                                 <h3 class="text-xl font-bold text-dark mb-2">Conclusão de Ensino Médio</h3>
-                                <p class="text-gray-600 mb-4">Atestado em até 30 dias com todo suporte necessário</p>
+                                <p class="text-gray-600 mb-4">Deixe todo o processo com a gente, sem complicações.
+                                    Atestado
+                                    em até 30 dias. <span class="font-bold text-primary mb-4">Clique em Saiba
+                                        Mais!</span>
+                                </p>
+
                                 <div class="flex justify-between items-center">
-                                    <span class="text-2xl font-bold text-primary">R$ 1.200,00</span>
-                                    <button
-                                        class="px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-secondary transition">Saiba
+                                    <div class="flex flex-col justify-between items-start">
+                                        <span class="text-xl text-gray-500 line-through">R$ 1.599,00</span>
+                                        <span class="text-2xl font-bold text-primary mt-1">R$ 1.197,00</span>
+                                    </div>
+                                    <button onclick="window.open('https:conclusao-ensino-medio.netlify.app/', '_blank')"
+                                        class="px-4 py-2 bg-primary text-white rounded-full text-md btn-hover hover:bg-secondary transition">Saiba
                                         Mais</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="lg:w-1/2 relative">
-                    <div class="relative max-w-lg mx-auto">
-                        <div
-                            class="absolute -top-10 -left-10 w-32 h-32 rounded-xl bg-primary/20 rotate-12 floating-shape">
-                        </div>
-                        <div
-                            class="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-secondary/20 floating-shape-2">
-                        </div>
-
-                        <div
-                            class="relative bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 transform rotate-1">
-                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
-                                alt="Estudante feliz" class="w-full h-auto">
-                            <div class="p-6">
-                                <h3 class="text-xl font-bold text-dark mb-2">Conclusão de Ensino Médio</h3>
-                                <p class="text-gray-600 mb-4">Atestado em até 30 dias com todo suporte necessário</p>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-2xl font-bold text-primary">R$ 1.200,00</span>
-                                    <button
-                                        class="px-4 py-2 bg-primary text-white rounded-full text-sm hover:bg-secondary transition">Saiba
-                                        Mais</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
             </div>
         </div>
         <div class="scroll-down">
@@ -391,7 +144,6 @@
         </div>
     </section>
 
-    <!-- Trust Badges -->
     <section class="bg-white py-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
@@ -415,7 +167,6 @@
         </div>
     </section>
 
-    <!-- Services Section -->
     <section id="servicos" class="py-20 bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -426,7 +177,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service 1 -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
                     <div class="feature-icon mb-6">
                         <i class="fas fa-file-alt text-3xl text-primary"></i>
@@ -435,12 +185,12 @@
                     <p class="text-gray-600 mb-4">Desenvolvimento completo do Trabalho de Conclusão de Curso, desde o
                         projeto até a versão final, com formatação ABNT.</p>
                     <div class="flex items-center text-accent font-medium">
-                        <span>Saiba mais</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://wa.me/5586999374991?text=Olá!%20Estou%20interessado(a)%20em%20serviços%20de%20assessoria%20para%20TCC%20e%20gostaria%20de%20saber%20mais%20informações.%20Pode%20me%20ajudar?"
+                            target="_blank" class="flex items-center text-accent font-medium hover:underline">
+                            <span>Saiba mais <i class="fas fa-arrow-right ml-2"></i></span>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Service 2 -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
                     <div class="feature-icon mb-6">
                         <i class="fas fa-microscope text-3xl text-primary"></i>
@@ -449,12 +199,12 @@
                     <p class="text-gray-600 mb-4">Elaboração de artigos acadêmicos com rigor científico, revisão
                         bibliográfica e metodologia adequada.</p>
                     <div class="flex items-center text-accent font-medium">
-                        <span>Saiba mais</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://wa.me/5586999374991?text=Olá!%20Estou%20interessado(a)%20em%20serviços%20de%20assessoria%20para%20Elaboração%20de%20artigos%20científicos%20e%20gostaria%20de%20saber%20mais%20informações.%20Pode%20me%20ajudar?"
+                            target="_blank" class="flex items-center text-accent font-medium hover:underline">
+                            <span>Saiba mais <i class="fas fa-arrow-right ml-2"></i></span>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Service 3 -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
                     <div class="feature-icon mb-6">
                         <i class="fas fa-graduation-cap text-3xl text-primary"></i>
@@ -463,26 +213,26 @@
                     <p class="text-gray-600 mb-4">Atestado de conclusão de ensino médio em até 30 dias, com todo o
                         processo documental necessário.</p>
                     <div class="flex items-center text-accent font-medium">
-                        <span>Saiba mais</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://wa.me/5586999374991?text=Olá!%20Estou%20interessado(a)%20em%20serviços%20de%20assessoria%20para%20conclusão%20de%20ensino%20médio%20e%20gostaria%20de%20saber%20mais%20informações.%20Pode%20me%20ajudar?"
+                            target="_blank" class="flex items-center text-accent font-medium hover:underline">
+                            <span>Saiba mais <i class="fas fa-arrow-right ml-2"></i></span>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Service 4 -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
                     <div class="feature-icon mb-6">
                         <i class="fas fa-book text-3xl text-primary"></i>
                     </div>
-                    <h3 class="text-xl font-bold text-primary mb-3">Preparação para Provas</h3>
-                    <p class="text-gray-600 mb-4">Material de estudo personalizado e aulas de reforço para provas de
-                        disciplinas específicas.</p>
+                    <h3 class="text-xl font-bold text-primary mb-3">Provas e Atividades</h3>
+                    <p class="text-gray-600 mb-4">Oferecemos suporte especializado e soluções sob medida para ajudar
+                        você a alcançar seus objetivos acadêmicos de forma prática e eficiente.</p>
                     <div class="flex items-center text-accent font-medium">
-                        <span>Saiba mais</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://wa.me/5586999374991?text=Olá!%20Estou%20interessado(a)%20em%20serviços%20de%20assessoria%20para%20provas%20e%20gostaria%20de%20saber%20mais%20informações.%20Pode%20me%20ajudar?"
+                            target="_blank" class="flex items-center text-accent font-medium hover:underline">
+                            <span>Saiba mais <i class="fas fa-arrow-right ml-2"></i></span>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Service 5 -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
                     <div class="feature-icon mb-6">
                         <i class="fas fa-edit text-3xl text-primary"></i>
@@ -491,12 +241,12 @@
                     <p class="text-gray-600 mb-4">Revisão textual, ortográfica e formatação conforme normas ABNT, APA ou
                         Vancouver.</p>
                     <div class="flex items-center text-accent font-medium">
-                        <span>Saiba mais</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://wa.me/5586999374991?text=Olá!%20Estou%20interessado(a)%20em%20serviços%20de%20assessoria%20para%20revisão%20e%20formatação%20e%20gostaria%20de%20saber%20mais%20informações.%20Pode%20me%20ajudar?"
+                            target="_blank" class="flex items-center text-accent font-medium hover:underline">
+                            <span>Saiba mais <i class="fas fa-arrow-right ml-2"></i></span>
+                        </a>
                     </div>
                 </div>
-
-                <!-- Service 6 -->
                 <div class="bg-white rounded-2xl p-8 shadow-lg card-hover">
                     <div class="feature-icon mb-6">
                         <i class="fas fa-chalkboard-teacher text-3xl text-primary"></i>
@@ -505,22 +255,23 @@
                     <p class="text-gray-600 mb-4">Acompanhamento individualizado com especialistas para desenvolvimento
                         de projetos acadêmicos.</p>
                     <div class="flex items-center text-accent font-medium">
-                        <span>Saiba mais</span>
-                        <i class="fas fa-arrow-right ml-2"></i>
+                        <a href="https://wa.me/5586999374991?text=Olá!%20Estou%20interessado(a)%20em%20serviços%20de%20assessoria%20para%20orientação%20personalizada%20e%20gostaria%20de%20saber%20mais%20informações.%20Pode%20me%20ajudar?"
+                            target="_blank" class="flex items-center text-accent font-medium hover:underline">
+                            <span>Saiba mais <i class="fas fa-arrow-right ml-2"></i></span>
+                        </a>
                     </div>
                 </div>
             </div>
-
             <div class="text-center mt-12">
-                <a href="#contato"
+                <a href="https://wa.me/5586999374991?text=Olá!%20Estou%20interessado(a)%20em%20outros%20serviços%20de%20assessoria%20e%20gostaria%20de%20conversar%20para%20entender%20as%20opções%20disponíveis."
+                    target="_blank"
                     class="gradient-bg text-white px-8 py-3 rounded-full font-bold inline-block btn-hover">
-                    Quero Saber Mais
+                    Quero outros serviços
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
     <section id="como-funciona" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -529,10 +280,8 @@
                 <p class="text-lg max-w-3xl mx-auto">Um processo simples e transparente para garantir os melhores
                     resultados acadêmicos.</p>
             </div>
-
             <div class="relative">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-                    <!-- Step 1 -->
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
                     <div class="relative timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="ml-12">
@@ -545,8 +294,6 @@
                             </p>
                         </div>
                     </div>
-
-                    <!-- Step 2 -->
                     <div class="relative timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="ml-12">
@@ -558,8 +305,6 @@
                             <p class="text-gray-600">Analisamos seu caso e enviamos um orçamento personalizado.</p>
                         </div>
                     </div>
-
-                    <!-- Step 3 -->
                     <div class="relative timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="ml-12">
@@ -572,9 +317,8 @@
                                 constante.</p>
                         </div>
                     </div>
-
-                    <!-- Step 4 -->
-                    <div class="relative">
+                    <div class="relative timeline-item">
+                        <div class="timeline-dot"></div>
                         <div class="ml-12">
                             <div
                                 class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -587,10 +331,9 @@
                     </div>
                 </div>
             </div>
-
             <div class="mt-16 bg-gradient-to-r from-primary to-secondary rounded-2xl p-8 md:p-12 text-white">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-2/3 mb-8 md:mb-0">
+                <div class="flex flex-col md:flex-row items-center mb-8 md:mb-0">
+                    <div class="md:w-2/3 mb-16 md:mb-8 text-center md:text-left">
                         <h3 class="text-2xl font-bold mb-4">Pronto para começar seu projeto acadêmico?</h3>
                         <p class="mb-6">Nossa equipe está pronta para te ajudar a alcançar o sucesso em seus estudos.
                         </p>
@@ -620,7 +363,6 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="py-16 gradient-bg text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
@@ -629,11 +371,11 @@
                     <p class="text-light">Alunos Atendidos</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-bold mb-2">98%</p>
+                    <p class="text-4xl md:text-5xl font-bold mb-2">99%</p>
                     <p class="text-light">Taxa de Aprovação</p>
                 </div>
                 <div>
-                    <p class="text-4xl md:text-5xl font-bold mb-2">10+</p>
+                    <p class="text-4xl md:text-5xl font-bold mb-2">7+</p>
                     <p class="text-light">Anos de Experiência</p>
                 </div>
                 <div>
@@ -644,7 +386,6 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
     <section id="depoimentos" class="py-20 bg-light">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -654,7 +395,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card rounded-2xl p-8 relative">
                     <div
                         class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
@@ -672,16 +412,13 @@
                     <p class="text-gray-600 mb-6 text-center">"A assessoria me ajudou a finalizar meu TCC em tempo
                         recorde, com qualidade impecável. Recomendo a todos!"</p>
                     <div class="flex items-center justify-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/32.jpg"
-                            alt="Cliente satisfeito">
+                        <img class="w-12 h-12 rounded-full mr-4" src="img/ana_perfil.jpg" alt="Cliente satisfeito">
                         <div>
                             <p class="font-bold text-primary">Ana Carolina</p>
                             <p class="text-sm text-gray-500">Graduanda em Psicologia</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card rounded-2xl p-8 relative">
                     <div
                         class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
@@ -699,16 +436,13 @@
                     <p class="text-gray-600 mb-6 text-center">"Consegui meu atestado de conclusão do ensino médio em
                         apenas 25 dias. Serviço rápido e confiável!"</p>
                     <div class="flex items-center justify-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/men/45.jpg"
-                            alt="Cliente satisfeito">
+                        <img class="w-12 h-12 rounded-full mr-4" src="img/roberto_perfil.jpg" alt="Cliente satisfeito">
                         <div>
                             <p class="font-bold text-primary">Roberto Silva</p>
                             <p class="text-sm text-gray-500">Conclusão de Ensino Médio</p>
                         </div>
                     </div>
                 </div>
-
-                <!-- Testimonial 3 -->
                 <div class="testimonial-card rounded-2xl p-8 relative">
                     <div
                         class="absolute -top-6 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white">
@@ -726,8 +460,7 @@
                     <p class="text-gray-600 mb-6 text-center">"Meu artigo foi aceito em uma revista científica graças à
                         qualidade da assessoria recebida. Nota 10!"</p>
                     <div class="flex items-center justify-center">
-                        <img class="w-12 h-12 rounded-full mr-4" src="https://randomuser.me/api/portraits/women/68.jpg"
-                            alt="Cliente satisfeito">
+                        <img class="w-12 h-12 rounded-full mr-4" src="img/perfil_nulo.png" alt="Cliente satisfeito">
                         <div>
                             <p class="font-bold text-primary">Juliana Mendes</p>
                             <p class="text-sm text-gray-500">Mestranda em Educação</p>
@@ -745,29 +478,34 @@
         </div>
     </section>
 
-    <!-- About Us -->
-    <section id="sobre" class="py-20 bg-white">
+    <section id="sobre" class="py-20 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row items-center">
+            <div class="flex flex-col md:flex-row items-center md:text-left text-center">
                 <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Sobre <span
                             class="text-accent">Nós</span></h2>
-                    <p class="text-gray-600 mb-6">A Assessoria Acadêmica nasceu da necessidade de oferecer suporte
+                    <p class="text-lg max-w-3xl mx-auto mb-6">A Assessoria Acadêmica nasceu da necessidade de oferecer
+                        suporte
                         especializado para estudantes em todas as etapas de sua formação. Nossa equipe é composta por
                         mestres e doutores com vasta experiência acadêmica.</p>
-                    <p class="text-gray-600 mb-8">Nosso objetivo é simplificar a vida acadêmica dos estudantes,
+                    <p class="text-lg max-w-3xl mx-auto mb-8">Nosso objetivo é simplificar a vida acadêmica dos
+                        estudantes,
                         oferecendo serviços de qualidade que realmente façam a diferença em sua trajetória educacional.
                     </p>
-                    <div class="flex flex-wrap gap-4 mb-8">
-                        <div class="flex items-center bg-light px-4 py-2 rounded-full">
+                    <div class="flex flex-wrap gap-4 mb-8 justify-center md:justify-start">
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full text-xs md:text-md">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>Compromisso com Prazos</span>
+                        </div>
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full text-xs md:text-md">
+                            <i class="fas fa-check-circle text-accent mr-2"></i>
+                            <span>Sem IA, Sem Plágio</span>
+                        </div>
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full text-xs md:text-md">
                             <i class="fas fa-check-circle text-accent mr-2"></i>
                             <span>Equipe Qualificada</span>
                         </div>
-                        <div class="flex items-center bg-light px-4 py-2 rounded-full">
-                            <i class="fas fa-check-circle text-accent mr-2"></i>
-                            <span>Metodologia Comprovada</span>
-                        </div>
-                        <div class="flex items-center bg-light px-4 py-2 rounded-full">
+                        <div class="flex items-center bg-light px-4 py-2 rounded-full text-xs md:text-md">
                             <i class="fas fa-check-circle text-accent mr-2"></i>
                             <span>Confidencialidade</span>
                         </div>
@@ -777,25 +515,37 @@
                         Conheça Nossa Equipe
                     </a>
                 </div>
-                <div class="md:w-1/2 relative">
+                <div class="md:w-1/2 relative mx-auto">
                     <div class="relative z-10">
                         <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
-                            alt="Nossa equipe" class="rounded-2xl shadow-2xl w-full">
+                            alt="Nossa equipe"
+                            class="rounded-2xl shadow-2xl w-full max-w-[90%] mx-auto sm:max-w-[80%] lg:max-w-full">
                     </div>
-                    <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-accent rounded-2xl z-0 animate-float"></div>
-                    <div
-                        class="absolute -top-8 -right-8 w-40 h-40 bg-primary opacity-20 rounded-full z-0 animate-float-reverse">
+                    <div class="absolute bg-accent rounded-2xl z-0 animate-float 
+               -bottom-8 -left-8 w-32 h-32 
+               sm:w-24 sm:h-24 sm:-bottom-6 sm:-left-6 
+               md:w-28 md:h-28 md:-bottom-6 md:-left-6 
+               lg:w-32 lg:h-32 lg:-bottom-8 lg:-left-8">
                     </div>
-                    <div
-                        class="absolute bottom-0 right-0 transform translate-y-1/2 translate-x-1/4 bg-white p-4 rounded-xl shadow-lg z-20">
+                    <div class="absolute bg-primary opacity-20 rounded-full z-0 animate-float-reverse 
+               -top-8 -right-8 w-40 h-40 
+               sm:w-32 sm:h-32 sm:-top-6 sm:-right-6 
+               md:w-36 md:h-36 md:-top-6 md:-right-6 
+               lg:w-40 lg:h-40 lg:-top-8 lg:-right-8">
+                    </div>
+                    <div class="absolute bottom-0 right-0 transform translate-y-1/2  translate-x-[10%] bg-white 
+                         p-2 rounded-xl shadow-lg z-20 ">
                         <div class="flex items-center">
-                            <div
-                                class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-3">
-                                <i class="fas fa-award"></i>
+                            <div class="bg-primary text-white w-8 h-8 sm:w-12 sm:h-12 xs:w-8 xs:h-8 md:w-11 md:h-11 lg:w-12 lg:h-12 
+                                rounded-full flex items-center justify-center mr-3 sm:mr-2">
+                                <i class="fas fa-award text-lg sm:text-base xs:text-sm md:text-base lg:text-lg"></i>
                             </div>
                             <div>
-                                <p class="font-bold text-primary">+10 anos</p>
-                                <p class="text-sm text-gray-600">de experiência</p>
+                                <p
+                                    class="font-bold text-primary text-base sm:text-sm xs:text-xs md:text-sm lg:text-base">
+                                    +7 anos</p>
+                                <p class="text-sm sm:text-xs xs:text-[10px] md:text-xs lg:text-sm text-gray-600">de
+                                    experiência</p>
                             </div>
                         </div>
                     </div>
@@ -803,8 +553,6 @@
             </div>
         </div>
     </section>
-
-    <!-- FAQ -->
     <section class="py-20 bg-light">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -814,7 +562,6 @@
             </div>
 
             <div class="space-y-4">
-                <!-- FAQ Item 1 -->
                 <div class="faq-item bg-white rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(1)">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-bold text-primary">Quanto tempo leva para concluir um TCC?</h3>
@@ -826,8 +573,6 @@
                             pesquisa, redação e formatação.</p>
                     </div>
                 </div>
-
-                <!-- FAQ Item 2 -->
                 <div class="faq-item bg-white rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(2)">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-bold text-primary">O trabalho é original e livre de plágio?</h3>
@@ -839,8 +584,6 @@
                             entregue.</p>
                     </div>
                 </div>
-
-                <!-- FAQ Item 3 -->
                 <div class="faq-item bg-white rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(3)">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-bold text-primary">Como funciona o processo de conclusão de ensino
@@ -853,8 +596,6 @@
                             documentos básicos.</p>
                     </div>
                 </div>
-
-                <!-- FAQ Item 4 -->
                 <div class="faq-item bg-white rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(4)">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-bold text-primary">Posso solicitar revisões após a entrega?</h3>
@@ -865,8 +606,6 @@
                             entrega. Revisões adicionais ou após esse período podem ter custo adicional.</p>
                     </div>
                 </div>
-
-                <!-- FAQ Item 5 -->
                 <div class="faq-item bg-white rounded-xl p-6 cursor-pointer" onclick="toggleFAQ(5)">
                     <div class="flex justify-between items-center">
                         <h3 class="text-lg font-bold text-primary">Como é garantida a confidencialidade?</h3>
@@ -890,7 +629,6 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="py-20 gradient-bg text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para Alavancar Sua Vida Acadêmica?</h2>
@@ -908,141 +646,65 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contato" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row">
-                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-primary mb-6">Entre em <span
-                            class="text-accent">Contato</span></h2>
-                    <p class="text-gray-600 mb-8">Preencha o formulário ao lado ou entre em contato por um dos nossos
-                        canais de atendimento.</p>
-
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div
-                                class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary mb-1">Endereço</h4>
-                                <p class="text-gray-600">Av. Paulista, 1000 - São Paulo/SP</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary mb-1">Email</h4>
-                                <p class="text-gray-600">contato@assessoriaacademica.com</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary mb-1">Telefone</h4>
-                                <p class="text-gray-600">(11) 99999-9999</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start">
-                            <div
-                                class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mr-4">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-primary mb-1">Horário de Atendimento</h4>
-                                <p class="text-gray-600">Segunda a Sexta: 8h às 20h<br>Sábado: 9h às 14h</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="mt-8">
-                        <h4 class="font-bold text-primary mb-4">Siga-nos nas redes sociais</h4>
-                        <div class="flex space-x-4">
-                            <a href="#"
-                                class="w-10 h-10 bg-light rounded-full flex items-center justify-center text-primary hover:bg-accent transition">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#"
-                                class="w-10 h-10 bg-light rounded-full flex items-center justify-center text-primary hover:bg-accent transition">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#"
-                                class="w-10 h-10 bg-light rounded-full flex items-center justify-center text-primary hover:bg-accent transition">
-                                <i class="fab fa-linkedin-in"></i>
-                            </a>
-                            <a href="#"
-                                class="w-10 h-10 bg-light rounded-full flex items-center justify-center text-primary hover:bg-accent transition">
-                                <i class="fab fa-whatsapp"></i>
-                            </a>
-                        </div>
-                    </div>
+            <div class="text-center mb-8">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">Entre em <span
+                        class="text-accent">Contato</span></h2>
+                <p class="text-lg mb-8">Fale conosco diretamente pelo WhatsApp.</p>
+                <div class="mb-16 text-center">
+                    <a href="https://wa.me/5586999374991?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20assessoria%20acadêmica."
+                        target="_blank"
+                        class="inline-flex items-center bg-green-500 text-white px-6 py-3 rounded-full font-medium hover:bg-green-600 transition">
+                        <i class="fab fa-whatsapp mr-2 text-xl"></i> WhatsApp
+                    </a>
                 </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <div class="md:w-1/2">
-                    <div class="bg-light rounded-2xl p-8 shadow-lg">
-                        <h3 class="text-2xl font-bold text-primary mb-6">Envie sua Mensagem</h3>
-                        <form id="contact-form">
-                            <div class="mb-6">
-                                <label for="name" class="block text-primary font-medium mb-2">Nome Completo</label>
-                                <input type="text" id="name"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent input-focus"
-                                    required>
-                            </div>
-                            <div class="mb-6">
-                                <label for="email" class="block text-primary font-medium mb-2">Email</label>
-                                <input type="email" id="email"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent input-focus"
-                                    required>
-                            </div>
-                            <div class="mb-6">
-                                <label for="phone" class="block text-primary font-medium mb-2">Telefone</label>
-                                <input type="tel" id="phone"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent input-focus"
-                                    required>
-                            </div>
-                            <div class="mb-6">
-                                <label for="service" class="block text-primary font-medium mb-2">Serviço de
-                                    Interesse</label>
-                                <select id="service"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent input-focus"
-                                    required>
-                                    <option value="">Selecione um serviço</option>
-                                    <option value="tcc">TCC Completo</option>
-                                    <option value="artigo">Artigo Científico</option>
-                                    <option value="ensino-medio">Conclusão de Ensino Médio</option>
-                                    <option value="provas">Preparação para Provas</option>
-                                    <option value="revisao">Revisão e Formatação</option>
-                                    <option value="orientacao">Orientação Personalizada</option>
-                                    <option value="outro">Outro</option>
-                                </select>
-                            </div>
-                            <div class="mb-6">
-                                <label for="message" class="block text-primary font-medium mb-2">Mensagem</label>
-                                <textarea id="message" rows="4"
-                                    class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent input-focus"
-                                    required></textarea>
-                            </div>
-                            <button type="submit"
-                                class="gradient-bg text-white px-8 py-3 rounded-full font-bold w-full btn-hover">
-                                Enviar Mensagem
-                            </button>
-                        </form>
+                    <div class="flex flex-col items-center">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary mb-3">Endereço</h4>
+                            <p class="text-gray-600">Rua Padre Áureo, 13 - Pedro II / PI</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary mb-3">Email</h4>
+                            <p class="text-gray-600">contato@assessoriaacademica.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary mb-3">Telefone</h4>
+                            <p class="text-gray-600">(+55) 86 99902-6962</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <div class="bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center mb-4">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-primary mb-3">Horário de Atendimento</h4>
+                            <p class="text-gray-600">Suporte disponível 24 horas!</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="bg-dark text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
@@ -1084,30 +746,23 @@
                 </div>
 
                 <div>
-                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">Assine nossa newsletter para receber dicas acadêmicas e promoções.</p>
-                    <form class="flex">
-                        <input type="email" placeholder="Seu email"
-                            class="px-4 py-2 rounded-l-lg w-full text-dark focus:outline-none">
-                        <button type="submit" class="bg-accent text-primary px-4 py-2 rounded-r-lg">
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                    </form>
+                    <h4 class="text-lg font-bold mb-4">Redes Sociais</h4>
                     <div class="flex space-x-4 mt-4">
-                        <a href="#" class="text-gray-400 hover:text-accent transition"><i
-                                class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition"><i
-                                class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition"><i
-                                class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-accent transition"><i
-                                class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/assessoriaaacademica_?igsh=a2lvOWI4cXFuNjhl" target="_blank"
+                            class="w-10 h-10 bg-light rounded-full flex items-center justify-center text-primary hover:bg-accent transition">
+                            <i class="fab fa-instagram"></i> </a>
+                        <a href="#" target="_blank"
+                            class="w-10 h-10 bg-light rounded-full flex items-center justify-center text-primary hover:bg-accent transition">
+                            <i class="fas fa-envelope"></i> </a>
+                        <a href="#" target="_blank"
+                            class="w-10 h-10 bg-light rounded-full flex items-center justify-center text-primary hover:bg-accent transition">
+                            <i class="fab fa-whatsapp"></i> </a>
                     </div>
                 </div>
             </div>
 
             <div class="border-t border-gray-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Assessoria Acadêmica. Todos os direitos reservados.</p>
+                <p class="text-gray-400 mb-4 md:mb-0">© 2025 Assessoria Acadêmica. Todos os direitos reservados.</p>
                 <div class="flex space-x-6">
                     <a href="#" class="text-gray-400 hover:text-accent transition">Termos de Serviço</a>
                     <a href="#" class="text-gray-400 hover:text-accent transition">Política de Privacidade</a>
@@ -1116,14 +771,13 @@
         </div>
     </footer>
 
-    <!-- WhatsApp Float -->
-    <a href="https://wa.me/5511999999999"
-        class="fixed bottom-8 right-8 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition z-50">
+    <a href="https://wa.me/5586999374991?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20assessoria%20acadêmica."
+        target="_blank" class=" fixed bottom-8 right-8 bg-green-500 text-white w-12 h-12 rounded-full flex items-center justify-center
+        text-2xl shadow-lg hover:bg-green-600 transition z-50">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -1131,7 +785,6 @@
             mobileMenu.classList.toggle('hidden');
         });
 
-        // FAQ toggle
         function toggleFAQ(index) {
             const faqItem = document.querySelectorAll('.faq-item')[index - 1];
             const faqContent = faqItem.querySelector('.faq-content');
@@ -1141,18 +794,6 @@
             faqToggle.classList.toggle('active');
         }
 
-        // Form submission
-        const contactForm = document.getElementById('contact-form');
-
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Here you would typically send the form data to your server
-            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            contactForm.reset();
-        });
-
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1166,8 +807,6 @@
                         top: targetElement.offsetTop - 80,
                         behavior: 'smooth'
                     });
-
-                    // Close mobile menu if open
                     if (!mobileMenu.classList.contains('hidden')) {
                         mobileMenu.classList.add('hidden');
                     }
@@ -1175,7 +814,6 @@
             });
         });
 
-        // Scroll animation
         const observerOptions = {
             threshold: 0.1
         };
@@ -1192,6 +830,7 @@
             observer.observe(el);
         });
     </script>
+
 </body>
 
 </html>
